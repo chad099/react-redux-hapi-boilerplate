@@ -1,0 +1,8 @@
+extends ../../layouts/default
+
+block content
+    h1 Please verify your email address
+    br
+    p Dear #{model.profile.firstName} #{model.profile.lastName}
+    p Please verify your email address so we know that it's really you!
+    a(href="#{model.verifyLink}", target="_blank") Click To Verify Your Email Address

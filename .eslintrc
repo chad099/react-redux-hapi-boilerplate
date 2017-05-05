@@ -1,0 +1,31 @@
+{
+  "parser": "babel-eslint",
+  "extends": "eslint-config-airbnb-base",
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "indent": [2, 2, {"SwitchCase": 1}],
+    "no-console": 0,
+    "no-trailing-spaces": 0,
+    "no-underscore-dangle": 0,
+    "global-require": 0,
+    "import/no-extraneous-dependencies": 0,
+    "max-len": [2, {"code": 120, "ignoreUrls": true}],
+    "no-param-reassign": ["error", { "props": false }],
+    "new-cap": [2, {
+      "capIsNewExceptions": [
+        "Sequelize.ENUM",
+        "Sequelize.INTEGER",
+        "Sequelize.ARRAY",
+        "Sequelize.BIGINT",
+        "Sequelize.DECIMAL",
+
+
+        "Map",
+        "List"
+      ]
+    }]
+  }
+
+}

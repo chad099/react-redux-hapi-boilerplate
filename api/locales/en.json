@@ -1,0 +1,48 @@
+{
+  "db": {
+    "error": "Some DB error has occurred"
+  },
+  "plugins": {
+    "auth": {
+      "invalid": "Invalid or expired session",
+      "expired": "Session expired",
+      "missingToken": "Auth token is missing",
+      "invalidToken": "Auth token is not valid"
+    }
+  },
+  "services": {
+    "accountService": {
+      "missingUserPayload": "userPaylod is required",
+      "missingProfilePayload": "profilePayload is required",
+      "userEmailExists": "Email is already registered.",
+      "userMobileExists": "Mobile no is already registered."
+    },
+    "sessionService": {
+      "missingUsername": "Username is required",
+      "missingPassword": "Password is required",
+      "wrongUsernamePassword": "Wrong username or password"
+    }
+  },
+  "controllers": {
+    "organisations": {
+      "nameExists": "Organisation with same name already exists"
+    }
+  },
+  "func": {
+    "missingArg": {
+      "services": {
+        "accountService": {
+          "userPayload": {
+            "email": "func.missingArg.services.accountService.userPayload.email",
+            "password": "func.missingArg.services.accountService.userPayload.password",
+            "role": "func.missingArg.services.accountService.userPayload.role"
+          },
+          "profilePayload": {
+            "firstName": "func.missingArg.services.accountService.profilePayload.firstName",
+            "lastName": "func.missingArg.services.accountService.profilePayload.lastName"
+          }
+        }
+      }
+    }
+  }
+}

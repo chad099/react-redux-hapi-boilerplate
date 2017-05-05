@@ -1,0 +1,4 @@
+{
+  "name": "OrderNotificationMailer",
+  "main": "notification.js"
+}

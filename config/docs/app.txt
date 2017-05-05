@@ -1,0 +1,20 @@
+Site Admin:
+  - Will Create/Manage Org
+
+Org:
+  - Define roles.
+  - Invite/create users for a role
+  - User permissions
+
+Users:
+  - SignUp/In
+
+
+== Modules ==
+
+Time Tracker
+  - Integration with Jira/Confluence.
+  - Log time against jira tasks.
+
+HR
+  - Employees Details

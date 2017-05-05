@@ -1,0 +1,71 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title
+  body
+    table(style='width: 700px; padding: 15px;')
+      tr
+        td(style='text-align: center; border-bottom: 1px solid #ff5e00;')
+          img(src=model.serverUrl + "/logo")
+      tr
+        td(style='text-align: center; border-top: 2px solid #ff5e00;')
+      tr
+        td
+          h2(style='font-size: 20px; font-family: Arial; color: #323232;') Hey #{model.user.profile.firstName},
+      | .
+      tr
+        td
+          p(style='font-size: 20px; font-family: Arial; color: #00bfff; margin: 0px;') Thank you for your Order
+      tr
+        td
+          p(style='font-size: 15px; font-family: Arial; color: #323232; margin: 0px; line-height: 28px; padding-top: 10px;')
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      tr
+        td
+          table(style='width: 100%; padding-top: 50px;', cellpadding='0', cellspacing='0')
+            tr
+              td(style='font-size: 16px; font-family: Arial; color: #323232; font-weight: bold; text-align: left; padding-bottom: 10px;') Order: #2930
+              td(style='font-size: 16px; font-family: Arial; color: #323232; font-weight: normal; text-align: right; ') Your placed your Order on 2/2/2017
+            tr(style='background-color: #f2f2f2;')
+              td(style='text-align: left; padding: 18px; font-size: 16px; font-family: Arial; font-weight: bold;') Est . Delivery Date
+              td(style='text-align: right; padding: 18px; font-size: 16px; font-family: Arial; font-weight: bold;') Shipping Destination
+            tr
+              td(style='padding-left: 23px; font-size: 16px; font-family: Arial;     vertical-align: top;padding-top: 21px;')  2/2/2017
+              td(style='text-align: left; float: right; margin-top: 20px; font-size: 16px; font-family: Arial;     line-height: 28px;')
+                | ABC
+                br
+                | 724 Battery street
+                br
+                | 2nd Floor
+                br
+                |   San Fransico,
+                br
+                | CA 94111
+      tr
+        td
+          table(style='width: 100%; padding-top: 50px;', cellpadding='0', cellspacing='0')
+            tr
+              td(style='font-size: 16px; font-family: Arial; color: #323232; font-weight: bold; text-align: left; padding-bottom: 10px;') Here’s what you ordered:
+            tr(style='background-color: #f2f2f2;')
+              td(style='text-align: left; padding: 18px; font-size: 16px; font-family: Arial; font-weight: bold;') Est . Delivery Date
+              td(style='text-align: center; padding: 18px; font-size: 16px; font-family: Arial; font-weight: bold;') Qty
+              td(style='text-align: right; padding: 18px; font-size: 16px; font-family: Arial; font-weight: bold;') Price
+            for getProduct in model.order.orderProducts
+              tr
+                td(style='padding-left: 23px; font-size: 16px; font-family: Arial;')
+                  img(style='margin-top: 10px;float: left;height:104px;width:114px;', src=model.serverUrl + "/product/" + getProduct.product.id + "/image/" + getProduct.product.productImages[0].title)
+                  p(style='    padding-left: 20px;    float: left; width: 56%;') #{getProduct.product.title}
+                td(style='text-align: center;font-family: Arial;font-size: 16px;line-height: 28px;    vertical-align: top;padding-top: 21px;')  #{getProduct.quantity}
+                td(style='  margin-top: 20px;font-size: 16px; text-align: right;font-family: Arial; line-height: 28px; padding: 15px;     vertical-align: top;padding-top: 21px;') #{getProduct.price}
+      tr
+        td(colspan='2', style='text-align: right; font-family: Arial; ')
+          p
+            b Sub-total:
+            |  #{model.order.totalAmount}
+          p
+            b Shipping:
+            |  $0.00
+      tr(style='margin-top: 20px; float: right; width: 100%;')
+        td(colspan='2', style='text-align: right; float: right; font-family: Arial; font-weight: bold;')
+          span(style='background-color: #f2f2f2; padding:10px 50px;') Total $ #{model.order.totalAmount}
